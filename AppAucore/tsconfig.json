@@ -1,0 +1,25 @@
+{
+  /*
+    Use the explicit path to the Expo base config so TypeScript can find it
+    even if the module lookup is having issues.  Also enable JS input and
+    explicitly include all possible source extensions.  If you don't intend
+    to write any TS/TSX code you could remove this file entirely, but the
+    adjustments below prevent the "index.ts not found" error. */
+  "extends": "./node_modules/expo/tsconfig.base.json",
+
+  "compilerOptions": {
+    "strict": true,
+    "allowJs": true,
+    "jsx": "react",
+    "skipLibCheck": true
+  },
+
+  "include": [
+    // using a simple wildcard ensures at least one file is picked up;
+    // allowJs already lets the compiler read .js/.jsx files
+    "**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
